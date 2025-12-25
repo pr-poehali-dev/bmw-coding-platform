@@ -5,6 +5,8 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import Icon from '@/components/ui/icon';
 import { useToast } from '@/hooks/use-toast';
+import AnimatedGrid from '@/components/AnimatedGrid';
+import ParticlesBackground from '@/components/ParticlesBackground';
 
 export default function Index() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -20,7 +22,10 @@ export default function Index() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
+      <ParticlesBackground />
+      <AnimatedGrid />
+      <div className="relative z-10">
       <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-lg border-b border-border">
         <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
           <div className="text-2xl font-bold gradient-text">BMW Code</div>
@@ -246,6 +251,7 @@ export default function Index() {
           </div>
         </div>
       </footer>
+      </div>
     </div>
   );
 }
