@@ -1,0 +1,31 @@
+{
+  "tests": [
+    {
+      "name": "Создание платежа (демо-режим)",
+      "method": "POST",
+      "path": "/create",
+      "body": {
+        "user_id": 1,
+        "plan_type": "after_birth",
+        "return_url": "https://test.com/success"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "payment_url": "string",
+        "payment_id": "string",
+        "amount": 500
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Проверка статуса платежа",
+      "method": "GET",
+      "path": "/status?payment_id=test-payment-123",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "status": "string"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
