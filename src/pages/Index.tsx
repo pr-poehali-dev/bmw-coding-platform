@@ -4,10 +4,14 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import Icon from '@/components/ui/icon';
 import { useToast } from '@/hooks/use-toast';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '@/lib/auth-context';
 
 export default function Index() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const { toast } = useToast();
+  const navigate = useNavigate();
+  const { isAuthenticated } = useAuth();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -31,8 +35,11 @@ export default function Index() {
             <a href="#plans" className="text-foreground hover:text-primary transition-colors">Тарифы</a>
             <a href="#blog" className="text-foreground hover:text-primary transition-colors">Блог</a>
             <a href="#contact" className="text-foreground hover:text-primary transition-colors">Контакты</a>
-            <Button className="bg-primary hover:bg-primary/90 text-white">
-              Попробовать бесплатно
+            <Button 
+              className="bg-primary hover:bg-primary/90 text-white"
+              onClick={() => navigate(isAuthenticated ? '/dashboard' : '/login')}
+            >
+              {isAuthenticated ? 'Личный кабинет' : 'Попробовать бесплатно'}
             </Button>
           </div>
         </nav>
@@ -53,7 +60,11 @@ export default function Index() {
                 С поддержкой ИИ-ассистента и сообществом мам.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white text-lg px-8">
+                <Button 
+                  size="lg" 
+                  className="bg-primary hover:bg-primary/90 text-white text-lg px-8"
+                  onClick={() => navigate('/login')}
+                >
                   <Icon name="Sparkles" className="mr-2" size={20} />
                   Начать бесплатно
                 </Button>
@@ -192,7 +203,10 @@ export default function Index() {
                   <span className="text-foreground">Доступ к форуму</span>
                 </li>
               </ul>
-              <Button className="w-full bg-primary hover:bg-primary/90 text-white">
+              <Button 
+                className="w-full bg-primary hover:bg-primary/90 text-white"
+                onClick={() => navigate('/login')}
+              >
                 Начать подготовку
               </Button>
             </div>
@@ -236,7 +250,10 @@ export default function Index() {
                   <span className="text-white">Безлимитный ИИ-чат</span>
                 </li>
               </ul>
-              <Button className="w-full bg-white text-primary hover:bg-white/90">
+              <Button 
+                className="w-full bg-white text-primary hover:bg-white/90"
+                onClick={() => navigate('/login')}
+              >
                 Начать восстановление
               </Button>
             </div>
@@ -271,7 +288,10 @@ export default function Index() {
                   <span className="text-foreground">Безлимитный ИИ-чат</span>
                 </li>
               </ul>
-              <Button className="w-full bg-secondary hover:bg-secondary/90 text-white">
+              <Button 
+                className="w-full bg-secondary hover:bg-secondary/90 text-white"
+                onClick={() => navigate('/login')}
+              >
                 Начать развитие
               </Button>
             </div>
