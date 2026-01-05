@@ -12,7 +12,8 @@ import base64
 
 def handler(event: dict, context) -> dict:
     method = event.get('httpMethod', 'GET')
-    path = event.get('requestContext', {}).get('http', {}).get('path', event.get('path', '/'))
+    query_params = event.get('queryStringParameters', {}) or {}
+    action = query_params.get('action', '')
     
     if method == 'OPTIONS':
         return {
@@ -30,7 +31,7 @@ def handler(event: dict, context) -> dict:
     shop_id = os.environ.get('YUKASSA_SHOP_ID', '')
     secret_key = os.environ.get('YUKASSA_SECRET_KEY', '')
     
-    if method == 'POST' and '/create' in path:
+    if method == 'POST' and action == 'create':
         body = json.loads(event.get('body', '{}'))
         user_id = body.get('user_id')
         plan_type = body.get('plan_type')
@@ -136,7 +137,7 @@ def handler(event: dict, context) -> dict:
                 'isBase64Encoded': False
             }
     
-    if method == 'POST' and '/webhook' in path:
+    if method == 'POST' and action == 'webhook':
         body = json.loads(event.get('body', '{}'))
         
         if body.get('event') == 'payment.succeeded':
@@ -173,7 +174,7 @@ def handler(event: dict, context) -> dict:
             'isBase64Encoded': False
         }
     
-    if method == 'GET' and '/status' in path:
+    if method == 'GET' and action == 'status':
         query_params = event.get('queryStringParameters', {}) or {}
         payment_id = query_params.get('payment_id')
         

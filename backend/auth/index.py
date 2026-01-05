@@ -61,7 +61,8 @@ def verify_jwt_token(token: str) -> dict:
 
 def handler(event: dict, context) -> dict:
     method = event.get('httpMethod', 'GET')
-    path = event.get('requestContext', {}).get('http', {}).get('path', event.get('path', '/'))
+    query_params = event.get('queryStringParameters', {}) or {}
+    action = query_params.get('action', '')
     
     if method == 'OPTIONS':
         return {
@@ -78,7 +79,7 @@ def handler(event: dict, context) -> dict:
     
     db_url = os.environ['DATABASE_URL']
     
-    if method == 'POST' and '/register' in path:
+    if method == 'POST' and action == 'register':
         body = json.loads(event.get('body', '{}'))
         email = body.get('email', '').strip().lower()
         password = body.get('password', '')
@@ -152,7 +153,7 @@ def handler(event: dict, context) -> dict:
                 'isBase64Encoded': False
             }
     
-    if method == 'POST' and '/login' in path:
+    if method == 'POST' and action == 'login':
         body = json.loads(event.get('body', '{}'))
         email = body.get('email', '').strip().lower()
         password = body.get('password', '')
@@ -210,7 +211,7 @@ def handler(event: dict, context) -> dict:
                 'isBase64Encoded': False
             }
     
-    if method == 'GET' and '/me' in path:
+    if method == 'GET' and action == 'me':
         auth_header = event.get('headers', {}).get('X-Authorization', '')
         token = auth_header.replace('Bearer ', '')
         

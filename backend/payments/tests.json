@@ -3,7 +3,7 @@
     {
       "name": "Создание платежа (демо-режим)",
       "method": "POST",
-      "path": "/create",
+      "path": "/?action=create",
       "body": {
         "user_id": 1,
         "plan_type": "after_birth",
@@ -20,7 +20,7 @@
     {
       "name": "Проверка статуса платежа",
       "method": "GET",
-      "path": "/status?payment_id=test-payment-123",
+      "path": "/?action=status&payment_id=test-payment-123",
       "expectedStatus": 200,
       "expectedBody": {
         "status": "string"
