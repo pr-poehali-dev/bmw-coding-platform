@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
+import CTABanner from './CTABanner';
 
 const results = [
   {
@@ -147,17 +148,13 @@ export default function ResultsSection() {
             </div>
           </div>
 
-          <div className="mt-12 text-center">
-            <p className="text-muted-foreground mb-6">
-              Хотите увидеть такой же результат? Запишитесь на бесплатную консультацию
-            </p>
-            <Button 
-              size="lg"
-              className="bg-accent hover:bg-accent/90 text-foreground font-medium"
-            >
-              <Icon name="Calendar" className="mr-2" size={20} />
-              Записаться на консультацию
-            </Button>
+          <div className="mt-16">
+            <CTABanner
+              title="Хотите такой же результат?"
+              description="Запишитесь на бесплатную консультацию — покажем портфолио и подберём процедуры под ваши цели"
+              buttonText="Посмотреть больше результатов"
+              variant="accent"
+            />
           </div>
         </div>
       </div>

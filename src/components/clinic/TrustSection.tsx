@@ -1,4 +1,5 @@
 import Icon from '@/components/ui/icon';
+import CTABanner from './CTABanner';
 
 const trustItems = [
   {
@@ -110,6 +111,15 @@ export default function TrustSection() {
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="mt-16">
+          <CTABanner
+            title="Убедитесь в нашем профессионализме лично"
+            description="Приходите на бесплатную консультацию — покажем лицензии, расскажем о технологиях и подберём процедуры"
+            buttonText="Записаться на встречу"
+            variant="secondary"
+          />
         </div>
       </div>
     </section>

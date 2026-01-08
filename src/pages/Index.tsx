@@ -7,6 +7,8 @@ import ResultsSection from '@/components/clinic/ResultsSection';
 import ExpertSection from '@/components/clinic/ExpertSection';
 import FAQSection from '@/components/clinic/FAQSection';
 import Footer from '@/components/clinic/Footer';
+import ExitIntentPopup from '@/components/clinic/ExitIntentPopup';
+import UrgencyTimer from '@/components/clinic/UrgencyTimer';
 
 export default function Index() {
   return (
@@ -20,6 +22,8 @@ export default function Index() {
       <ExpertSection />
       <FAQSection />
       <Footer />
+      <ExitIntentPopup />
+      <UrgencyTimer />
     </div>
   );
 }

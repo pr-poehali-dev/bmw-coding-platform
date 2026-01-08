@@ -1,11 +1,12 @@
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
+import LeadMagnet from './LeadMagnet';
 
 export default function HeroSection() {
   return (
     <section className="pt-32 pb-20 px-6 bg-gradient-to-b from-background to-white">
       <div className="container mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
           <div className="space-y-8 animate-fade-in">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-accent/20 rounded-full text-sm font-medium text-foreground">
               <Icon name="Award" size={16} className="text-accent" />
@@ -67,27 +68,31 @@ export default function HeroSection() {
             </div>
           </div>
 
-          <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/20 blur-3xl rounded-full"></div>
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-              <img 
-                src="https://cdn.poehali.dev/projects/1fa99a0f-d8eb-4e10-869c-960e6cf163ad/files/e34925ea-de48-4c7f-a581-9dabfb44940b.jpg"
-                alt="Здоровая сияющая кожа"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            
-            <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-xl border border-border max-w-xs animate-slide-in">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center">
-                  <Icon name="Sparkles" size={24} className="text-accent" />
-                </div>
-                <div>
-                  <div className="font-semibold text-foreground">Естественный результат</div>
-                  <div className="text-sm text-muted-foreground">Никаких масок и искажений</div>
+          <div className="space-y-8">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/20 blur-3xl rounded-full"></div>
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <img 
+                  src="https://cdn.poehali.dev/projects/1fa99a0f-d8eb-4e10-869c-960e6cf163ad/files/e34925ea-de48-4c7f-a581-9dabfb44940b.jpg"
+                  alt="Здоровая сияющая кожа"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              
+              <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-xl border border-border max-w-xs animate-slide-in">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center">
+                    <Icon name="Sparkles" size={24} className="text-accent" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-foreground">Естественный результат</div>
+                    <div className="text-sm text-muted-foreground">Никаких масок и искажений</div>
+                  </div>
                 </div>
               </div>
             </div>
+
+            <LeadMagnet />
           </div>
         </div>
       </div>

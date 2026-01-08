@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
+import CTABanner from './CTABanner';
 
 const services = [
   {
@@ -110,6 +111,15 @@ export default function ServicesSection() {
             <Icon name="MessageCircle" className="mr-2" size={18} />
             Получить консультацию
           </Button>
+        </div>
+
+        <div className="mt-16">
+          <CTABanner
+            title="Сомневаетесь, какая процедура подойдёт?"
+            description="Запишитесь на бесплатную консультацию — наш косметолог подберёт индивидуальную программу и рассчитает стоимость"
+            buttonText="Записаться на консультацию"
+            variant="primary"
+          />
         </div>
       </div>
     </section>
