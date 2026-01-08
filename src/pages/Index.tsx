@@ -2,6 +2,7 @@ import Header from '@/components/clinic/Header';
 import HeroSection from '@/components/clinic/HeroSection';
 import ServicesSection from '@/components/clinic/ServicesSection';
 import TrustSection from '@/components/clinic/TrustSection';
+import AcademySection from '@/components/clinic/AcademySection';
 import ResultsSection from '@/components/clinic/ResultsSection';
 import ExpertSection from '@/components/clinic/ExpertSection';
 import FAQSection from '@/components/clinic/FAQSection';
@@ -14,6 +15,7 @@ export default function Index() {
       <HeroSection />
       <ServicesSection />
       <TrustSection />
+      <AcademySection />
       <ResultsSection />
       <ExpertSection />
       <FAQSection />

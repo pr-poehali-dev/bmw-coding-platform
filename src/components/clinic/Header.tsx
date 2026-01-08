@@ -20,16 +20,19 @@ export default function Header() {
           </div>
 
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#services" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
+            <a href="#services" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
               Услуги
             </a>
-            <a href="#results" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
+            <a href="#academy" className="text-sm font-medium text-foreground hover:text-secondary transition-colors">
+              Обучение
+            </a>
+            <a href="#results" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
               Результаты
             </a>
-            <a href="#expert" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
+            <a href="#expert" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
               Врач
             </a>
-            <a href="#faq" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
+            <a href="#faq" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
               FAQ
             </a>
             <a href="tel:+74951234567" className="flex items-center gap-2 text-sm font-medium text-foreground hover:text-accent transition-colors">
@@ -39,7 +42,7 @@ export default function Header() {
           </nav>
 
           <Button 
-            className="hidden md:flex bg-accent hover:bg-accent/90 text-foreground font-medium sticky-cta"
+            className="hidden md:flex bg-accent hover:bg-accent/90 text-white font-medium sticky-cta"
             size="lg"
           >
             <Icon name="Calendar" className="mr-2" size={18} />
@@ -56,16 +59,19 @@ export default function Header() {
 
         {mobileMenuOpen && (
           <nav className="md:hidden mt-4 py-4 border-t border-border space-y-4">
-            <a href="#services" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
+            <a href="#services" className="block text-sm font-medium text-foreground hover:text-primary transition-colors">
               Услуги
             </a>
-            <a href="#results" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
+            <a href="#academy" className="block text-sm font-medium text-foreground hover:text-secondary transition-colors">
+              Обучение
+            </a>
+            <a href="#results" className="block text-sm font-medium text-foreground hover:text-primary transition-colors">
               Результаты
             </a>
-            <a href="#expert" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
+            <a href="#expert" className="block text-sm font-medium text-foreground hover:text-primary transition-colors">
               Врач
             </a>
-            <a href="#faq" className="block text-sm font-medium text-foreground hover:text-accent transition-colors">
+            <a href="#faq" className="block text-sm font-medium text-foreground hover:text-primary transition-colors">
               FAQ
             </a>
             <a href="tel:+74951234567" className="flex items-center gap-2 text-sm font-medium text-foreground hover:text-accent transition-colors">
@@ -73,7 +79,7 @@ export default function Header() {
               +7 (495) 123-45-67
             </a>
             <Button 
-              className="w-full bg-accent hover:bg-accent/90 text-foreground font-medium"
+              className="w-full bg-accent hover:bg-accent/90 text-white font-medium"
               size="lg"
             >
               <Icon name="Calendar" className="mr-2" size={18} />
