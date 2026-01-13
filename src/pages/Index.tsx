@@ -1,10 +1,19 @@
+import Header from '@/components/tuning/Header';
+import Hero from '@/components/tuning/Hero';
+import Services from '@/components/tuning/Services';
+import Benefits from '@/components/tuning/Benefits';
+import Contact from '@/components/tuning/Contact';
+import Footer from '@/components/tuning/Footer';
+
 export default function Index() {
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center">
-      <div className="text-center space-y-4">
-        <h1 className="text-6xl font-bold gradient-text">Добро пожаловать</h1>
-        <p className="text-xl text-muted-foreground">Ваш проект готов к разработке</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <Header />
+      <Hero />
+      <Services />
+      <Benefits />
+      <Contact />
+      <Footer />
     </div>
   );
 }
