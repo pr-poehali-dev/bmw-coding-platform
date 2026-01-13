@@ -17,58 +17,58 @@ export default function Contact() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-2xl font-bold mb-6">Контактная информация</h3>
-                
-                <div className="space-y-4">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                      <Icon name="Phone" size={20} className="text-primary" />
-                    </div>
-                    <div>
-                      <div className="text-sm text-muted-foreground">Телефон</div>
-                      <a href="tel:+74951337477" className="text-lg font-bold hover:text-primary transition-colors">
-                        +7 495 133 7477
-                      </a>
-                    </div>
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-2xl font-bold mb-6">Контактная информация</h3>
+              
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Icon name="Phone" size={20} className="text-primary" />
                   </div>
+                  <div>
+                    <div className="text-sm text-muted-foreground mb-1">Телефон</div>
+                    <a href="tel:+74951337477" className="text-lg font-bold hover:text-primary transition-colors">
+                      +7 495 133 7477
+                    </a>
+                  </div>
+                </div>
 
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Icon name="Mail" size={24} className="text-primary" />
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Icon name="Mail" size={24} className="text-primary" />
+                  </div>
+                  <div>
+                    <div className="text-sm text-muted-foreground mb-1">Email</div>
+                    <a href="mailto:info@reborn.tech" className="text-lg font-bold hover:text-primary transition-colors">
+                      info@reborn.tech
+                    </a>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-2">Email</h3>
-                  <a href="mailto:info@reborn.tech" className="text-muted-foreground hover:text-primary transition-colors">
-                    info@reborn.tech
-                  </a>
-                </div>
-              </div>
 
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Icon name="MapPin" size={24} className="text-primary" />
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Icon name="MapPin" size={24} className="text-primary" />
+                  </div>
+                  <div>
+                    <div className="text-sm text-muted-foreground mb-1">Адрес</div>
+                    <p className="text-lg font-bold">
+                      Москва и регионы
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-2">Адрес</h3>
-                  <p className="text-muted-foreground">
-                    Москва и регионы
-                  </p>
-                </div>
-              </div>
 
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <Icon name="Clock" size={24} className="text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-2">Время работы</h3>
-                  <p className="text-muted-foreground">
-                    Пн-Пт: 9:00 - 20:00<br />
-                    Сб-Вс: 10:00 - 18:00
-                  </p>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Icon name="Clock" size={24} className="text-primary" />
+                  </div>
+                  <div>
+                    <div className="text-sm text-muted-foreground mb-1">Время работы</div>
+                    <p className="text-lg font-bold">
+                      Пн-Пт: 9:00 - 20:00<br />
+                      Сб-Вс: 10:00 - 18:00
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
