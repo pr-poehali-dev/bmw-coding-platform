@@ -18,47 +18,49 @@ export default function Header() {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-              <Icon name="Zap" size={24} className="text-white" />
-            </div>
+            <img 
+              src="https://cdn.poehali.dev/projects/1fa99a0f-d8eb-4e10-869c-960e6cf163ad/files/91428c7a-b168-42f7-82ab-d62d59c49cb7.jpg"
+              alt="Reborn Tech Logo"
+              className="w-10 h-10 rounded-xl object-cover"
+            />
             <div className="font-serif text-2xl font-bold text-foreground tracking-tight">
-              ChipTuning<span className="text-primary">Pro</span>
+              Reborn<span className="text-primary">Tech</span>
             </div>
           </div>
 
           <nav className="hidden md:flex items-center gap-8">
             <button 
-              onClick={() => scrollToSection('services')}
+              onClick={() => scrollToSection('science')}
               className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors"
             >
-              Услуги
+              Наука
             </button>
             <button 
-              onClick={() => scrollToSection('benefits')}
+              onClick={() => scrollToSection('technology')}
               className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors"
             >
-              Преимущества
+              Технологии
             </button>
             <button 
-              onClick={() => scrollToSection('prices')}
+              onClick={() => scrollToSection('applications')}
               className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors"
             >
-              Цены
+              Применение
             </button>
             <button 
-              onClick={() => scrollToSection('contact')}
+              onClick={() => scrollToSection('team')}
               className="text-sm font-medium text-foreground/70 hover:text-primary transition-colors"
             >
-              Контакты
+              Команда
             </button>
           </nav>
 
           <div className="hidden md:block">
             <Button 
               onClick={() => scrollToSection('contact')}
-              className="bg-gradient-to-r from-primary to-accent hover:opacity-90 text-white font-semibold shadow-lg"
+              className="bg-gradient-to-r from-primary via-accent to-secondary hover:opacity-90 text-white font-semibold shadow-lg"
             >
-              Записаться
+              Связаться
               <Icon name="ArrowRight" className="ml-2" size={16} />
             </Button>
           </div>
@@ -74,34 +76,34 @@ export default function Header() {
         {mobileMenuOpen && (
           <nav className="md:hidden mt-6 pt-6 border-t border-border/30 space-y-4">
             <button 
-              onClick={() => scrollToSection('services')}
+              onClick={() => scrollToSection('science')}
               className="block text-sm font-medium text-foreground/70 hover:text-primary transition-colors py-2 w-full text-left"
             >
-              Услуги
+              Наука
             </button>
             <button 
-              onClick={() => scrollToSection('benefits')}
+              onClick={() => scrollToSection('technology')}
               className="block text-sm font-medium text-foreground/70 hover:text-primary transition-colors py-2 w-full text-left"
             >
-              Преимущества
+              Технологии
             </button>
             <button 
-              onClick={() => scrollToSection('prices')}
+              onClick={() => scrollToSection('applications')}
               className="block text-sm font-medium text-foreground/70 hover:text-primary transition-colors py-2 w-full text-left"
             >
-              Цены
+              Применение
             </button>
             <button 
-              onClick={() => scrollToSection('contact')}
+              onClick={() => scrollToSection('team')}
               className="block text-sm font-medium text-foreground/70 hover:text-primary transition-colors py-2 w-full text-left"
             >
-              Контакты
+              Команда
             </button>
             <Button 
               onClick={() => scrollToSection('contact')}
-              className="w-full bg-gradient-to-r from-primary to-accent hover:opacity-90 text-white font-semibold mt-4"
+              className="w-full bg-gradient-to-r from-primary via-accent to-secondary hover:opacity-90 text-white font-semibold mt-4"
             >
-              Записаться
+              Связаться
             </Button>
           </nav>
         )}
