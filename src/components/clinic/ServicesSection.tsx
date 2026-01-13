@@ -35,26 +35,26 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-20 px-6 bg-white">
+    <section id="services" className="py-24 px-6 bg-background">
       <div className="container mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="font-serif text-4xl lg:text-5xl font-bold mb-4 text-foreground">
+        <div className="text-center mb-20">
+          <h2 className="font-serif text-4xl lg:text-5xl font-bold mb-5 text-foreground tracking-tight">
             Наши услуги
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Современные инъекционные процедуры с использованием премиальных препаратов
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6">
           {services.map((service, index) => (
             <div 
               key={index}
-              className="bg-background/50 rounded-3xl p-8 border border-border hover:border-accent hover:shadow-lg transition-all group"
+              className="glass-card rounded-[2rem] p-8 soft-shadow hover:ios-shadow transition-all duration-300 group"
             >
               <div className="flex items-start gap-6">
-                <div className="w-16 h-16 rounded-2xl bg-accent/20 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/30 transition-colors">
-                  <Icon name={service.icon as any} size={32} className="text-accent" />
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                  <Icon name={service.icon as any} size={28} className="text-accent" />
                 </div>
                 
                 <div className="flex-1">
@@ -63,32 +63,34 @@ export default function ServicesSection() {
                       {service.title}
                     </h3>
                     <div className="text-right">
-                      <div className="text-2xl font-bold text-accent">{service.price}</div>
+                      <div className="text-2xl font-bold gradient-text">{service.price}</div>
                     </div>
                   </div>
                   
-                  <p className="text-muted-foreground mb-4">
+                  <p className="text-muted-foreground mb-5 leading-relaxed">
                     {service.description}
                   </p>
 
-                  <ul className="space-y-2 mb-6">
+                  <ul className="space-y-2.5 mb-6">
                     {service.benefits.map((benefit, i) => (
-                      <li key={i} className="flex items-center gap-2 text-sm">
-                        <Icon name="Check" size={16} className="text-accent flex-shrink-0" />
-                        <span className="text-foreground">{benefit}</span>
+                      <li key={i} className="flex items-center gap-3 text-sm">
+                        <div className="w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center flex-shrink-0">
+                          <Icon name="Check" size={14} className="text-accent" />
+                        </div>
+                        <span className="text-foreground font-medium">{benefit}</span>
                       </li>
                     ))}
                   </ul>
 
                   <div className="flex gap-3">
                     <Button 
-                      className="flex-1 bg-accent hover:bg-accent/90 text-foreground"
+                      className="flex-1 bg-gradient-to-r from-primary to-accent hover:opacity-90 text-white font-semibold"
                     >
                       Записаться
                     </Button>
                     <Button 
                       variant="outline"
-                      className="border-accent text-accent hover:bg-accent/10"
+                      className="glass-card-subtle border-2 hover:bg-white/80"
                     >
                       <Icon name="Info" size={18} />
                     </Button>
@@ -99,18 +101,20 @@ export default function ServicesSection() {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <p className="text-muted-foreground mb-4">
-            Не нашли нужную процедуру? Мы проводим комплексные консультации
-          </p>
-          <Button 
-            size="lg" 
-            variant="outline"
-            className="border-2 border-accent text-accent hover:bg-accent/10"
-          >
-            <Icon name="MessageCircle" className="mr-2" size={18} />
-            Получить консультацию
-          </Button>
+        <div className="mt-14 text-center">
+          <div className="glass-card rounded-3xl p-8 max-w-2xl mx-auto soft-shadow">
+            <p className="text-muted-foreground mb-5 text-base">
+              Не нашли нужную процедуру? Мы проводим комплексные консультации
+            </p>
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="glass-card-subtle border-2 font-semibold hover:bg-white/80"
+            >
+              <Icon name="MessageCircle" className="mr-2" size={18} />
+              Получить консультацию
+            </Button>
+          </div>
         </div>
 
         <div className="mt-16">
