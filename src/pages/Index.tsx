@@ -1,21 +1,10 @@
-import Header from '@/components/reborn/Header';
-import HeroSection from '@/components/reborn/HeroSection';
-import TechnologySection from '@/components/reborn/TechnologySection';
-import ApplicationsSection from '@/components/reborn/ApplicationsSection';
-import TeamSection from '@/components/reborn/TeamSection';
-import ContactSection from '@/components/reborn/ContactSection';
-import Footer from '@/components/reborn/Footer';
-
 export default function Index() {
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <HeroSection />
-      <TechnologySection />
-      <ApplicationsSection />
-      <TeamSection />
-      <ContactSection />
-      <Footer />
+    <div className="min-h-screen bg-background flex items-center justify-center">
+      <div className="text-center space-y-4">
+        <h1 className="text-6xl font-bold gradient-text">Добро пожаловать</h1>
+        <p className="text-xl text-muted-foreground">Ваш проект готов к разработке</p>
+      </div>
     </div>
   );
 }
