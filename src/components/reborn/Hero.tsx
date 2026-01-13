@@ -1,90 +1,104 @@
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import Icon from '@/components/ui/icon';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 export default function Hero() {
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const [brand, setBrand] = useState('');
+  const [model, setModel] = useState('');
+  const [modification, setModification] = useState('');
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 pt-24 pb-20 bg-background relative overflow-hidden">
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-secondary/5 rounded-full blur-3xl"></div>
-      </div>
-      
-      <div className="container mx-auto relative z-10">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center space-y-10 mb-16">
-            <div className="inline-flex items-center gap-2 glass-card-subtle px-6 py-3 rounded-full border border-primary/20">
-              <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
-              <span className="text-sm font-medium text-primary">Будущее регенеративной медицины</span>
-            </div>
-
-            <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.05]">
-              Восстанавливаем жизнь
-              <br />
-              <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
-                на клеточном уровне
-              </span>
+    <section 
+      id="hero" 
+      className="relative min-h-[700px] flex items-center justify-center bg-cover bg-center"
+      style={{
+        backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1920&q=80)',
+      }}
+    >
+      <div className="container mx-auto px-6 py-32 relative z-10">
+        <div className="max-w-4xl mx-auto text-center space-y-12">
+          <div>
+            <h1 className="text-6xl md:text-7xl font-bold text-white mb-4 uppercase tracking-tight">
+              <span className="text-primary">ЧИП ТЮНИНГ</span> АВТОМОБИЛЕЙ
             </h1>
-
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Reborn Technologies разрабатывает революционные биотехнологии для регенерации 
-              тканей и органов человека, открывая новую эру персонализированной медицины
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
-              <Button 
-                size="lg"
-                onClick={() => scrollToSection('science')}
-                className="bg-gradient-to-r from-primary via-accent to-secondary hover:opacity-90 text-white font-semibold px-10 py-7 text-lg shadow-xl shadow-primary/20 hover:shadow-2xl transition-all duration-300"
-              >
-                Наша наука
-                <Icon name="Microscope" className="ml-2" size={20} />
-              </Button>
-              <Button 
-                size="lg"
-                variant="outline"
-                onClick={() => scrollToSection('contact')}
-                className="glass-card-subtle border-2 border-primary/30 font-semibold px-10 py-7 text-lg hover:bg-primary/5 transition-all duration-300"
-              >
-                Связаться с нами
-                <Icon name="ArrowRight" className="ml-2" size={18} />
-              </Button>
-            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <div className="glass-card rounded-3xl p-8 text-center border border-primary/10 hover:border-primary/30 transition-all">
-              <div className="text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2">
-                15+
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-white/20">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+              <div>
+                <label className="block text-white text-sm font-bold mb-2 text-left">
+                  1. Выберите марку:
+                </label>
+                <Select value={brand} onValueChange={setBrand}>
+                  <SelectTrigger className="w-full bg-white/90 border-0 h-12 text-base">
+                    <SelectValue placeholder="Марка автомобиля" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="bmw">BMW</SelectItem>
+                    <SelectItem value="mercedes">Mercedes-Benz</SelectItem>
+                    <SelectItem value="audi">Audi</SelectItem>
+                    <SelectItem value="volkswagen">Volkswagen</SelectItem>
+                    <SelectItem value="porsche">Porsche</SelectItem>
+                    <SelectItem value="toyota">Toyota</SelectItem>
+                    <SelectItem value="lexus">Lexus</SelectItem>
+                    <SelectItem value="nissan">Nissan</SelectItem>
+                    <SelectItem value="mazda">Mazda</SelectItem>
+                    <SelectItem value="honda">Honda</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
-              <div className="text-sm text-muted-foreground font-medium">Лет исследований</div>
-            </div>
-            <div className="glass-card rounded-3xl p-8 text-center border border-accent/10 hover:border-accent/30 transition-all">
-              <div className="text-5xl font-bold bg-gradient-to-r from-accent to-secondary bg-clip-text text-transparent mb-2">
-                98%
+
+              <div>
+                <label className="block text-white text-sm font-bold mb-2 text-left">
+                  2. Выберите модель:
+                </label>
+                <Select value={model} onValueChange={setModel} disabled={!brand}>
+                  <SelectTrigger className="w-full bg-white/90 border-0 h-12 text-base">
+                    <SelectValue placeholder="Модель автомобиля" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="model1">3 Series</SelectItem>
+                    <SelectItem value="model2">5 Series</SelectItem>
+                    <SelectItem value="model3">X5</SelectItem>
+                    <SelectItem value="model4">X6</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
-              <div className="text-sm text-muted-foreground font-medium">Успешность терапии</div>
-            </div>
-            <div className="glass-card rounded-3xl p-8 text-center border border-secondary/10 hover:border-secondary/30 transition-all">
-              <div className="text-5xl font-bold bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent mb-2">
-                5000+
+
+              <div>
+                <label className="block text-white text-sm font-bold mb-2 text-left">
+                  3. Выберите модификацию:
+                </label>
+                <Select value={modification} onValueChange={setModification} disabled={!model}>
+                  <SelectTrigger className="w-full bg-white/90 border-0 h-12 text-base">
+                    <SelectValue placeholder="Модификация автомобиля" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="mod1">320i 2.0T 184hp</SelectItem>
+                    <SelectItem value="mod2">330i 2.0T 258hp</SelectItem>
+                    <SelectItem value="mod3">M340i 3.0T 374hp</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
-              <div className="text-sm text-muted-foreground font-medium">Пациентов помогли</div>
             </div>
+
+            <Button 
+              size="lg"
+              className="w-full md:w-auto bg-primary hover:bg-primary/90 text-white font-bold px-12 py-6 text-lg uppercase tracking-wider shadow-xl"
+            >
+              ВЫБРАТЬ
+            </Button>
           </div>
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <Icon name="ChevronDown" size={32} className="text-muted-foreground/50" />
-      </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/50 pointer-events-none"></div>
     </section>
   );
 }

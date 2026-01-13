@@ -1,9 +1,8 @@
 import Header from '@/components/reborn/Header';
 import Hero from '@/components/reborn/Hero';
-import Science from '@/components/reborn/Science';
-import Technology from '@/components/reborn/Technology';
-import Applications from '@/components/reborn/Applications';
-import Team from '@/components/reborn/Team';
+import About from '@/components/reborn/About';
+import Services from '@/components/reborn/Services';
+import Dyno from '@/components/reborn/Dyno';
 import Contact from '@/components/reborn/Contact';
 import Footer from '@/components/reborn/Footer';
 
@@ -12,10 +11,9 @@ export default function Index() {
     <div className="min-h-screen bg-background">
       <Header />
       <Hero />
-      <Science />
-      <Technology />
-      <Applications />
-      <Team />
+      <About />
+      <Services />
+      <Dyno />
       <Contact />
       <Footer />
     </div>
