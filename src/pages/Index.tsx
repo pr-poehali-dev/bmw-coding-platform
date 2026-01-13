@@ -1,29 +1,17 @@
-import Header from '@/components/clinic/Header';
-import HeroSection from '@/components/clinic/HeroSection';
-import ServicesSection from '@/components/clinic/ServicesSection';
-import TrustSection from '@/components/clinic/TrustSection';
-import AcademySection from '@/components/clinic/AcademySection';
-import ResultsSection from '@/components/clinic/ResultsSection';
-import ExpertSection from '@/components/clinic/ExpertSection';
-import FAQSection from '@/components/clinic/FAQSection';
-import Footer from '@/components/clinic/Footer';
-import ExitIntentPopup from '@/components/clinic/ExitIntentPopup';
-import UrgencyTimer from '@/components/clinic/UrgencyTimer';
+import Header from '@/components/auto/Header';
+import Hero from '@/components/auto/Hero';
+import Features from '@/components/auto/Features';
+import CTA from '@/components/auto/CTA';
+import Footer from '@/components/auto/Footer';
 
 export default function Index() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <HeroSection />
-      <ServicesSection />
-      <TrustSection />
-      <AcademySection />
-      <ResultsSection />
-      <ExpertSection />
-      <FAQSection />
+      <Hero />
+      <Features />
+      <CTA />
       <Footer />
-      <ExitIntentPopup />
-      <UrgencyTimer />
     </div>
   );
 }
